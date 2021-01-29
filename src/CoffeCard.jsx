@@ -35,22 +35,22 @@ const useStyles = makeStyles({
 
 const CoffeeCard = (props) => {
   const classes = useStyles();
-  const { avatarSrc, title, subtitle, description, imgSrc } = props;
+  const { avatarUrl, title, price, description, imageUrl } = props;
 
   return (
     <Card className={classes.root}>
       <CardHeader
-        avatar={<Avatar className={classes.avatar} src={avatarSrc} />}
+        avatar={<Avatar className={classes.avatar} src={avatarUrl} />}
         action={
           <IconButton aria-label="settings">
             <ShareIcon />
           </IconButton>
         }
         title={title}
-        subheader={subtitle}
+        subheader={price}
       />
 
-      <CardMedia className={classes.media} image={imgSrc} title={title} />
+      <CardMedia className={classes.media} image={imageUrl} title={title} />
       <CardContent>
         <Typography variant="body2" component="p">
           {description}
